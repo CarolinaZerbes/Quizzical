@@ -3,8 +3,6 @@ import React from "react"
 import Question from "./Question"
 
 export default function QuestionsPage(props){
-
-    console.log("Ho")
     const [questions, setQuestions] = React.useState([])
     const [questionsDB, setQuestionsDB] = React.useState([])
     const [isClicked, setisClicked] = React.useState(false)
@@ -80,7 +78,6 @@ export default function QuestionsPage(props){
                 else if (questionsAux[index].answers[i][1] === 1){
                     questionsAux[index].answers[i][1] = 3
                     correct ++
-                    console.log(correct)
                 }  
             }
             else{
@@ -90,7 +87,6 @@ export default function QuestionsPage(props){
                 else if (questionsAux[index].answers[i][1] === 3){
                     questionsAux[index].answers[i][1] = 1
                     correct --
-                    console.log(correct)
                 }
             }
         }

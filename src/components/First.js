@@ -1,5 +1,4 @@
 export default function First(props){
-    console.log("first")
     return(
         <div className="first-page">
             <h1>Quizzical</h1>
