@@ -39,27 +39,8 @@ export default function QuestionsPage(props){
 
                 (!answers.includes(question.correct_answer) && answers.splice(Math.floor(Math.random() * 3), 0, question.correct_answer))
 
-                const finalAnswers = answers.map(answer => {  
-                    return(
-                        answer.replace(/&lt;/g, "<")
-                            .replace(/&Gt;/g, ">")
-                            .replace(/&#039;/g, "'")
-                            .replace(/&amp;/g, "")
-                            .replace(/&ouml;/g, "o")
-                            .replace(/&quot;/g, "")
-                            .replace(/&ldquo;/g, `"`)
-                            .replace(/&eacute;/g, `e`)  
-                    )
-                } )
+                const finalAnswers = answers
                 let finalQuestion = question.question
-                finalQuestion.replace(/&lt;/g, "<")
-                    .replace(/&Gt;/g, ">")
-                    .replace(/&#039;/g, "")
-                    .replace(/&amp;/g, "")
-                    .replace(/&ouml;/g, "o")
-                    .replace(/&quot;/g, "")
-                    .replace(/&ldquo;/g, `"`)
-                    .replace(/&eacute;/g, `e`)
 
                 let answersArray = []
                 for (let i=0; i<answers.length; i++){

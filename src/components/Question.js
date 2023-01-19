@@ -24,15 +24,21 @@ export default function question(props){
        ele[i].checked = false;
 
     function htmlEntities(str) {
-        return String(str).replace(/"/g, '&quot;');
+        return String(str).replace(/&quot;/g, '"')
+        .replace(/&lt;/g, "<")
+        .replace(/&Gt;/g, ">")
+        .replace(/&#039;/g, "'")
+        .replace(/&amp;/g, "")
+        .replace(/&ouml;/g, "o")
+        .replace(/&rdquo;/g, '"')
+        .replace(/&ldquo;/g, `"`)
+        .replace(/&eacute;/g, `e`) ;
     }
 
-    var quest = 'Who played "Agent Fox Mulder in the TV sci-fi drama &quot;The X-Files&quot;?'
-    quest = htmlEntities(quest)
-    console.log(quest);
+    var question = htmlEntities(props.element.question)
     return(
         <div>
-            <h3>{htmlEntities(quest)}</h3>
+            <h3>{question}</h3>
             <form className="boxed">
                 <ul>
                     <li className={name}>
