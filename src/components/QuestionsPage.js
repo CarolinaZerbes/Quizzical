@@ -3,6 +3,8 @@ import React from "react"
 import Question from "./Question"
 
 export default function QuestionsPage(props){
+
+    console.log("Ho")
     const [questions, setQuestions] = React.useState([])
     const [questionsDB, setQuestionsDB] = React.useState([])
     const [isClicked, setisClicked] = React.useState(false)

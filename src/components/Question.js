@@ -1,5 +1,4 @@
 export default function question(props){
-
     function handleChange(event){
         if(!props.element.seeAnswer)
             props.handleChange(event, props.index)
@@ -24,9 +23,16 @@ export default function question(props){
     for(var i=0;i<ele.length;i++)
        ele[i].checked = false;
 
+    function htmlEntities(str) {
+        return String(str).replace(/"/g, '&quot;');
+    }
+
+    var quest = 'Who played "Agent Fox Mulder in the TV sci-fi drama &quot;The X-Files&quot;?'
+    quest = htmlEntities(quest)
+    console.log(quest);
     return(
         <div>
-            <h3>{props.element.question}</h3>
+            <h3>{htmlEntities(quest)}</h3>
             <form className="boxed">
                 <ul>
                     <li className={name}>
